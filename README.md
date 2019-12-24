@@ -6,18 +6,33 @@ machine and get the output in return.
 
 # Build
 
+## Preparation
+
+*go-serve* requires `gorilla/mux`. Install it with
+
 ```sh
 $ go get -u github.com/gorilla/mux
-$ go build -o go-serve *.go
 ```
 
-# Docker image
+## Build
 
-To build a Docker image, the built binary including all required libraries
-must be copied into `bin/`.
+Build the project with
 
 ```sh
-$ sudo docker build -t go-serve:0.1.0 .
+$ make go-serve
+```
+
+## Docker image
+
+Build the docker image with
+
+```sh
+$ make docker
+```
+
+and start a new container with
+
+```sh
 ```
 
 > NOTE: Currently the web ui is available on port 8081 and cannot be changed.

@@ -1,15 +1,11 @@
 FROM golang:1.10.3-stretch
 
-LABEL MAINTAINER="Programm Eins <programm.eins@gmail.com>"
+LABEL MAINTAINER="Stephan Weintritt <45856463+sweintritt@users.noreply.github.com>"
 
-ARG BINDIR="/opt/cmd"
+ARG BINDIR="/opt/go-serve"
 
-ADD bin/cmd/ $BINDIR/bin/cmd/
-ADD public/ $BINDIR/public/
-ADD cmd-webui $BINDIR/cmd-webui
-
-ENV LD_LIBRARY_PATH $BINDIR/bin/cmd/
+ADD build/ $BINDIR/
 
 WORKDIR $BINDIR
 
-CMD ["./cmd-webui"]
+CMD ["./go-serve"]
