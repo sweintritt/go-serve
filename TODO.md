@@ -1,8 +1,6 @@
 ToDo
 ====
 
-* Simpler error messages => Nasa example from the *The Go Programming Language*
-* Simplify error handling by simply return errors
 * Cleanup tmp/ on start
 * Configurable Port
 * Write readme
