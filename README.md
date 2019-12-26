@@ -1,38 +1,27 @@
-go serve
+go-serve
 =========
 
 Simple Web UI to upload and excute Go code. Select a source code file on your
 machine and get the output in return.
 
+> **CAUTION!** This is a simple fun project and should not be used in production!
+
 # Build
 
-## Preparation
+Simply run `make all` will build the project. *go-serve* requires `gorilla/mux`. Which will be
+installed during the build. The last step creates a docker image. This can be run with
 
-*go-serve* requires `gorilla/mux`. Install it with
-
-```sh
-$ go get -u github.com/gorilla/mux
-```
-
-## Build
-
-Build the project with
+# Run
 
 ```sh
-$ make go-serve
+$ docker run --name go-serve -d -p 8081:8081 go-serve:1.0.0
 ```
 
-## Docker image
+The web UI will be available at `localhost:8081`
 
-Build the docker image with
+![go-serve-start](doc/go-serve-start.png)
 
-```sh
-$ make docker
-```
+Select a go file to upload and execute it. The output will be printed on the screen and a log file
+will be available for download.
 
-and start a new container with
-
-```sh
-```
-
-> NOTE: Currently the web ui is available on port 8081 and cannot be changed.
+![go-serve-example-1](doc/go-serve-example-1.png)
